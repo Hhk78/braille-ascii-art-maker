@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Braille ASCII Art</title>
+	<link rel="stylesheet" href="styles.css?v=3">
+</head>
+
+<body>
+
+	<h1>Braille ASCII Art</h1>
+	
+
+	<p>
+		<label for="filepicker">Image</label>
+		<input type="file" id="filepicker" accept=".png,.jpeg,.jpg">
+	</p>
+
+	<p>
+		<label for="dither">Dither Mode</label>
+		<select id="dither">
+			<option value="floydSteinberg">Floyd-Steinberg (simple)</option>
+			<option value="stucki">Stucki (edge contrast)</option>
+			<option value="atkinson">Atkinson (high contrast)</option>
+			<option value="threshold">Threshold (no dither)</option>
+		</select>
+	</p>
+
+	<p>
+		<label for="threshold">Threshold</label>
+		<input type="range" id="threshold" min="0" max="254" value="127">
+	</p>
+
+	<p>
+		<label for="width">Width</label>
+		<input type="number" id="width" value="100" step="10"> characters (>500 gets laggy)
+	</p>
+
+	<p>
+		<label for="invert">Invert</label>
+		<input type="checkbox" id="invert">
+	</p>
+
+	<p>
+		<label for="font-size">Preview font size</label>
+		<input type="number" id="font-size" value="10">
+	</p>
+
+	<p>
+		<button id="copy">Copy</button>
+		(<span id="char-count">0</span> characters)
+	</p>
+
+	<div id="output" contenteditable="true"></div>
+
+	<script src="dist/index.js?v=3" type="module"></script>
+
+</body>
+
+</html>
